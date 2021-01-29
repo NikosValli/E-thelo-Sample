@@ -61,7 +61,7 @@ app.use(cors());
 
 const secret=process.env.SECRET || 'thisshouldbeabettersecret!';
 const store=new MongoDBstore({
-    url:'mongodb://localhost:27017/ethelo',
+    url:dbUrl,
     secret,
     touchAfter:24*60*60
 });
