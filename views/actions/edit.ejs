@@ -1,0 +1,84 @@
+<% layout('layouts/boilerplate') %>
+        <div class="row">
+
+            <h1 class="text-center">Update Action</h1>
+            <div class="col-md-6 offset-md-3">
+                <form action="/actions/<%=action._id %>?_method=PUT" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <h6><label class="form-label" for="title" style="font-style: oblique;">Title</label></h6>
+                        <input class="form-control" type="text" id="title" name="action[title]" value="<%=action.title %>"required>
+                        <div class="valid-feedback">
+                            Title looks good!
+                       </div>
+                    </div>
+                    <div class="mb-3">
+                        <h6><label class="form-label" for="place" style="font-style: oblique;">Place</label></h6>
+                        <input class="form-control" type="text" id="place" name="action[place]" value="<%=action.place %>"required>
+                        <div class="valid-feedback">
+                            Place looks good!
+                       </div>
+                    </div>
+                    <div class="mb-3">
+                        <h6><label for="image" class="form-label" style="font-style: oblique;">Choose Images</label></h6>
+                        <input class="form-control form-control-sm" type="file" id="image" name="image" multiple>
+                      
+                      <small id="ImageHelpBlock" class="form-text text-muted">
+                        It is not necessary to upload an image but it would be useful &#128522;
+                        </small>
+                    </div>
+                    <div class="valid-feedback">
+                        Image looks good!
+                   </div>
+                    <div class="mb-3">
+                        <h6><label class="form-label" for="description" style="font-style: oblique;">Description of the action</label></h6>
+                        <textarea class="form-control" type="text" rows=3 id="description" name="action[description]" required><%=action.description %></textarea>
+                        <div class="valid-feedback">
+                            Description looks good!
+                       </div>
+                    </div>
+                       
+                    <div class="mb-3">
+                        <h6><label class=form-label for="date" style="font-style: oblique;">Date of the Event: </label></h6>
+                        <input type="datetime-local" class="form-control" id="datee" name="action[date]"  required> 
+                        <div class="valid-feedback">
+                            Date looks good!
+                       </div>
+                    </div>
+                    <h6><label class="form-label" for="uploadedimages" style="font-style: oblique;">Images that you have already uploaded:</label></h6>
+                    <div class="mb-6">
+                        <% action.images.forEach(function(img,i){ %>
+                            <img src="<%= img.thumbnail %>" class="img.thumbnail" alt="">
+                            <div class="form-check-inline">
+                               <input type="checkbox" id="image-<%= i %>" name="deleteImages[]" value="<%=img.filename %>">
+                            </div>
+                            <label for="image-<%= i %>">Delete?</label>
+                            <% }) %> 
+
+                    </div>
+                    <div class="mb-3">
+                        <button class="btn btn-info">Update Action!</button>
+                    </div>
+                    </form>
+
+                    <div class="mb-3">
+                    <a href="/actions/<%= action._id %>">Back to action</a>
+                    </div>
+            </div>
+        </div>
+
+
+    <script>
+
+var date = new Date("<%=action.date %>");  // dateStr you get from mongodb
+
+var d = date.getDate();
+var month = date.getMonth()+1;
+var y=date.getFullYear();
+var h=date.getHours();
+var minutes=date.getMinutes();
+
+var htmlDatee=date.getFullYear() +"-" + (month < 10? "0":"") +month +"-" + (d < 10? "0":"") + d +"T"+h+":"+minutes;
+      console.log(htmlDatee);
+      document.getElementById("datee").value =htmlDatee;
+        
+    </script>

@@ -1,0 +1,93 @@
+<% layout('layouts/boilerplate') %>
+
+
+
+<div class="row">
+    <h1 class="text-center">New Action</h1>
+    <div class="col-md-6 offset-md-3">
+       
+        <form action="/actions" id="newaction" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label class="form-label" for="title">Title</label>
+                <input class="form-control" type="text" id="title" name="action[title]" required minlength="5" maxlength="30">
+                <small id="titleHelpBlock" class="form-text text-muted">
+                    Your title must be between 5 to 30 characters.
+                    </small>
+                <div class="valid-feedback">
+                    Title looks good!
+               </div>
+               <div class="invalid-feedback">
+                Title does not look good! (It must not be empty and it must be between 5 to 30 characters).
+           </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="place">Place</label>
+                <input class="form-control" type="text" id="place" name="action[place]" required minlength="5" maxlength="30">
+                <small id="PlaceHelpBlock" class="form-text text-muted">
+                    The Location must be between 5 to 30 characters.
+                    </small>
+                <div class="valid-feedback">
+                    Place looks good!
+               </div>
+               <div class="invalid-feedback">
+                Place does not look good! (It must not be empty and it must be between 5 to 20 characters).
+           </div>
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Choose Images</label>
+                <input class="form-control form-control-sm" type="file" id="image" name="image" multiple>
+              
+              <small id="ImageHelpBlock" class="form-text text-muted">
+                It is not necessary to upload an image but it would be useful &#128522;
+                </small>
+            </div>
+            <!--<input type="file" name="image" id="" multiple > -->
+            <!--<div class="mb-3">
+                <label class="form-label" for="image">Image</label>
+                <input class="form-control" type="text" id="image" name="action[image]">
+                <small id="ImageHelpBlock" class="form-text text-muted">
+                    It is not necessary to upload an image but it would be useful &#128522;
+                    </small>
+            </div> -->
+            <div class="mb-3">
+                <label class="form-label" for="description">Description of the action</label>
+                <textarea class="form-control" type="text" rows=3 id="description" name="action[description]" required minlength="10" maxlength="300"></textarea>
+                <small id="DescriptionHelpBlock" class="form-text text-muted">
+                    Your description must be between 10 to 300 characters.
+                    </small>
+                <div class="valid-feedback">
+                    Description looks good!
+               </div>
+               <div class="invalid-feedback">
+                Description does not look good! (It must not be empty and it must be between 10 to 300 characters).
+           </div>  
+            </div>
+            
+               
+            <div class="mb-3">
+                <label class=form-label for="date">Date of the Event: </label>
+                <input type="datetime-local" class="form-control" id="date" name="action[date]" required>
+                <small id="DateHelpBlock" class="form-text text-muted">
+                    Set the date of the action and we are ready to go!
+                    </small>
+                <div class="valid-feedback">
+                    Date looks good!
+               </div>
+               <div class="invalid-feedback">
+                Date does not look good! (You have to specify the date and the Start time of the action).
+           </div>  
+        </div>    
+        
+            <div class="mb-3">
+                <button class="btn btn-success">Add New Action!</button>
+            </div>
+        
+            </form>
+            
+            
+            <a href="/actions">All actions</a>
+    </div>
+    </div>
+
+
+</div>

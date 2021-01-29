@@ -1,0 +1,71 @@
+<% layout('layouts/boilerplate')%>
+
+<style>
+
+  body{
+      background: #43C6AC;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #191654, #43C6AC);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #191654, #43C6AC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  }
+
+  #footer{
+      display: none;
+  }
+
+
+</style>
+<div class="container d-flex justify-content-center align-items-center">
+  <div class="row">
+      <div class="col-md-6 offset-md-3 col-xl-4 offset-xl-4 mb-5">
+          <div class="card shadow">
+              <img src="https://powerlanguage.net/wp-content/uploads/2019/09/welcome.jpg"
+                  alt="" class="card-img-top" />
+              <div class="card-body">
+                  <h5 class="card-title" style="text-align: center;">Register</h5>
+                  <form action="/register" method="POST" class="validated-form" novalidate>
+
+                    <div class="mb-3">
+                      <h6 style="font-style: oblique;"><label class="form-label" for="username">Username</label></h6>
+                        <input class="form-control" type="text" id="username" name="username" required>
+                      
+                       <div class="valid-feedback">
+                         looks good!
+                   </div>
+                   <div class="invalid-feedback">
+                    Please set a valid username
+               </div>
+  
+                </div>
+                   <div class="mb-3">
+                    <h6 style="font-style: oblique;"><label class="form-label" for="email">Email</label></h6>
+                    <input class="form-control" type="email" id="email" name="email" required>
+                   
+                   <div class="valid-feedback">
+                     looks good!
+                </div>
+                <div class="invalid-feedback">
+                  Please set a valid e-mail
+             </div>
+                </div>
+                <div class="mb-3">
+                  <h6 style="font-style: oblique;"><label class="form-label" for="password">Password</label></h6>
+                    <input class="form-control" type="password" id="password" name="password" required>
+                   <div class="valid-feedback">
+                     looks good!
+                </div>
+                <div class="invalid-feedback">
+                  Please set a valid password
+             </div>
+
+                </div> 
+                <div class="col-md-6 offset-md-3">
+                  <button class="btn btn-success btn-block">Register</button>
+              </div>
+                
+                </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

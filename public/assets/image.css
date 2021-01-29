@@ -1,0 +1,12 @@
+.image{
+   max-width: 100%;
+   height: 400px;
+   object-fit: cover;
+   
+}
+
+.show-image{
+    width: 100%;
+   height: 200px;
+   object-fit: cover;
+}

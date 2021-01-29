@@ -1,0 +1,61 @@
+<% layout('layouts/boilerplate')%>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+
+<style>
+
+    body{
+        background: #43C6AC;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #191654, #43C6AC);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #191654, #43C6AC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    }
+
+    #footer{
+        display: none;
+    }
+
+
+</style>
+
+<div class="container d-flex justify-content-center align-items-center">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 col-xl-4 offset-xl-4 mb-5">
+            <div class="card shadow" style="height:530px;">
+                <img src="https://powerlanguage.net/wp-content/uploads/2019/09/welcome.jpg"
+                    alt="" class="card-img-top" style="margin-bottom: 10px;" />
+                <div class="card-body">
+                    <h5 class="card-title" style="text-align: center; margin-bottom: 10px;">Login</h5>
+                    <form action="/login" method="POST" class="validated-form" novalidate>
+                        <div class="mb-3">
+                            <h6 style="font-style: oblique; margin-bottom: 10px;"><label class="form-label" for="username">Username</label></h6>
+                            <input class="form-control" type="text" id="username" name="username" autofocus required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <h6 style="font-style: oblique;"><label class="form-label" for="password">Password</label></h6>
+                            <input class="form-control" type="password" id="password" name="password" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="col-md-6 offset-md-3">
+                        <button class="btn btn-success btn-block" style="margin-top:10px;">Login!</button>
+                    </div>
+                    </form>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type='javascript'>
+    $(document).ready(function(){
+        $("footer").hide();
+    });
+    </script>
+    
