@@ -34,9 +34,14 @@
                  <p class="card-text"><%=action.description %></p>
                  <p class="card-text">
                      <small class="text-muted">
-                        <%= action.place %>
+                        <%= action.place %> 
                      </small>
                     </p>
+                    <p class="card-text">
+                        <small class="text-muted">
+                           <%= action.author.username %> 
+                        </small>
+                       </p>
                     <a class="btn btn-primary" href="/actions/<%= action._id %>">View <%= action.title %></a>
 
              </div>
