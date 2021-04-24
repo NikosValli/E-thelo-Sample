@@ -31,7 +31,6 @@ module.exports.createNewForm=async (req,res,next)=>{
   } 
   action.author=req.user._id;
   await action.save();
-  console.log(action);
   req.flash('success','Successfully made a new Action!');
   res.redirect(`/actions/${action._id}`);
     

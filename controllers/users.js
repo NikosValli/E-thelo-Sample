@@ -44,6 +44,7 @@ module.exports.renderLogin=(req,res)=>{
             req.logout();
             req.flash('success',"Goodbye!");
             res.redirect('/actions');
+            console.log('Goodbye!');
             
             
             }
